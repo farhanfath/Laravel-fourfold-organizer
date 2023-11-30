@@ -8,14 +8,14 @@ const hamburger_menu = document.querySelector(".hamburger-menu");
 const navbar = document.querySelector("header nav");
 const links = document.querySelectorAll(".links a");
 
-footer_input.addEventListener("focus", () => {
-  footer_input.classList.add("focus");
-});
+// footer_input.addEventListener("focus", () => {
+//   footer_input.classList.add("focus");
+// });
 
-footer_input.addEventListener("blur", () => {
-  if (footer_input.value != "") return;
-  footer_input.classList.remove("focus");
-});
+// footer_input.addEventListener("blur", () => {
+//   if (footer_input.value != "") return;
+//   footer_input.classList.remove("focus");
+// });
 
 function closeMenu() {
   navbar.classList.remove("open");
@@ -50,22 +50,6 @@ $(".grid").isotope({
   transitionDuration: "0.6s",
 });
 
-window.addEventListener("scroll", () => {
-  skillsEffect();
-  countUp();
-});
-
-function checkScroll(el) {
-  let rect = el.getBoundingClientRect();
-  if (window.innerHeight >= rect.top + el.offsetHeight) return true;
-  return false;
-}
-
-function skillsEffect() {
-  if (!checkScroll(skills_wrap)) return;
-  skills_bars.forEach((skill) => (skill.style.width = skill.dataset.progress));
-}
-
 function countUp() {
   if (!checkScroll(records_wrap)) return;
   records_numbers.forEach((numb) => {
@@ -87,6 +71,7 @@ function countUp() {
   });
 }
 
+//homepage swiper
 var mySwiper = new Swiper(".swiper-container", {
   speed: 1100,
   slidesPerView: 1,
@@ -100,13 +85,30 @@ var mySwiper = new Swiper(".swiper-container", {
   },
 });
 
+// partner swiper
 
+// navbar
+$(document).ready(function(){
+  $(window).scroll(function(){
+    if(this.scrollY > 20){
+      $(".navbar").addClass("sticky");
+      $(".goTop").fadeIn();
+    }
+    else{
+      $(".navbar").removeClass("sticky");
+      $(".goTop").fadeOut();
+    }
+  });
+});
 
-// tambahan js modal
+// send email
+function sendToGmail() {
+  // Dapatkan nilai dari input email
+  var email = document.getElementById('emailInput').value;
 
-const myModal = document.getElementById('myModal')
-const myInput = document.getElementById('myInput')
+  // Buat link email untuk Gmail
+  var gmailLink = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(email);
 
-myModal.addEventListener('shown.bs.modal', () => {
-  myInput.focus()
-})
+  // Buka link Gmail
+  window.open(gmailLink, '_blank');
+}

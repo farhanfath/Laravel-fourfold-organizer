@@ -47,10 +47,5 @@ function get_event()
     return $data;
 }
 
-// function get_event_web()
-// {
-//     $data = event::all->filter()
-//     return $data;
-// }
 
 

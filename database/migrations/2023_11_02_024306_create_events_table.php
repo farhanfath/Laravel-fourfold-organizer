@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('thumbnail');
             $table->longText('content');
             $table->string('link');
-            $table->enum('post_as', ['appdev','webdev','logo-design','ui'])->nullable();
+            $table->enum('post_as', ['festival','party','concert','workshop'])->nullable();
             $table->timestamps();
         });
     }

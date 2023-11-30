@@ -39,10 +39,10 @@ class EventResource extends Resource
                         ->required()
                         ->maxLength(255),
                     Forms\Components\Select::make('post_as')->options([
-                            'appdev' => 'appdev',
-                            'webdev'=> 'webdev',
-                            'logo-design'=> 'logo-design',
-                            'ui'=> 'ui',
+                            'festival' => 'festival',
+                            'party'=> 'party',
+                            'concert'=> 'concert',
+                            'workshop'=> 'workshop',
                     ])
                 ]),
             ]);

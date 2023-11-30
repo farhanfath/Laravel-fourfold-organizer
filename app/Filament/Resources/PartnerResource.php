@@ -38,13 +38,6 @@ class PartnerResource extends Resource
                     Forms\Components\TextInput::make('link')
                         ->required()
                         ->maxLength(255),
-                    Forms\Components\Select::make('post_as')->options([
-                            'appdev' => 'appdev',
-                            'webdev'=> 'webdev',
-                            'logo-design'=> 'logo-design',
-                            'appdev ui'=> 'appdev ui',
-                            'ui webdev'=> 'ui webdev',
-                    ])
                 ]),
             ]);
     }
@@ -69,15 +62,13 @@ class PartnerResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make()->after(
-                    function (Collection $record){
-                        foreach ($record as $key => $value){
-                            if ($value->thumbnail) {
-                                Storage::disk('public')->delete($value->thumbnail);
-                            }
+                Tables\Actions\DeleteBulkAction::make()->after(function (Collection $record){
+                    foreach ($record as $key => $value){
+                        if ($value->thumbnail) {
+                            Storage::disk('public')->delete($value->thumbnail);
                         }
                     }
-                ),
+                }),
             ]);
     }
     
