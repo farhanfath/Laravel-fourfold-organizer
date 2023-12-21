@@ -65,3 +65,8 @@ gotoSection(0, 1);
 
 // original: https://codepen.io/BrianCross/pen/PoWapLP
 // horizontal version: https://codepen.io/GreenSock/pen/xxWdeMK
+
+function goGalleryLink() {
+  // Gantilah URL berikut dengan URL yang ingin Anda tuju
+  window.location.href = '/homepage';
+}

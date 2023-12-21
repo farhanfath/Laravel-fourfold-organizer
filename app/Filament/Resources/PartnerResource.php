@@ -62,13 +62,15 @@ class PartnerResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make()->after(function (Collection $record){
-                    foreach ($record as $key => $value){
-                        if ($value->thumbnail) {
-                            Storage::disk('public')->delete($value->thumbnail);
+                Tables\Actions\DeleteBulkAction::make()->after(
+                    function (Collection $records){
+                        foreach ($records as $key => $value){
+                            if ($value->thumbnail) {
+                                Storage::disk('public')->delete($value->thumbnail);
+                            }
                         }
                     }
-                }),
+                ),
             ]);
     }
     

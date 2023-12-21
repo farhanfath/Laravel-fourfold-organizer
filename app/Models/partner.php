@@ -22,7 +22,7 @@ class partner extends Model
         parent::boot();
         static::updating(function ($model) {
             //jika pada thumbnail terdapat file baru dan file lama !== null, maka hapus file thumbnail lama
-            if($model->isDirty('Thumbnail') && ($model->getOriginal('thumbnail') !== null)) {
+            if($model->isDirty('thumbnail') && ($model->getOriginal('thumbnail') !== null)) {
                 Storage::disk('public')->delete($model->getOriginal('thumbnail'));
             }
         });

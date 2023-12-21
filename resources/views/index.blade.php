@@ -111,7 +111,7 @@ $event = get_event();
               <swiper-slide class="blog-wrap">
                 <div class="blog-card">
                   <div class="blog-image">
-                    <img src="{{ Storage::url($item->thumbnail) }}" alt="" />
+                    <img src="{{ Storage::url($item->thumbnail) }}" alt=""/>
                   </div>
 
                   <div class="blog-content">
@@ -273,7 +273,7 @@ $event = get_event();
                 <a href="#portfolio">Portfolio</a>
               </li>
               <li>
-                <a href="#testimonials">Testimonials</a>
+                <a href="/">NEW</a>
               </li>
               <li>
                 <a href="#contact">Contact</a>

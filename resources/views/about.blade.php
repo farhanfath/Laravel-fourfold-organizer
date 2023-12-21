@@ -16,14 +16,19 @@ Sections animate in and out on scroll. Scroll up or down and the sections will w
 -->
 
 <header>
-  <div>About Fourfold</div>
-  <div><a href="../"> Fourfold Organizer </a></div>
+  <div class="nav">Fourfold Gallery</div>
+  <div class="nav"><a href="../"> Fourfold Organizer </a></div>
 </header>
 <section class="first">
   <div class="outer">
     <div class="inner">
       <div class="bg one">
-        <h2 class="section-heading">PARTY</h2>
+        <div class="video-wrap">
+          <video autoplay="" loop="" muted="" class="custom-video" poster="">
+              <source src="themes-video/video/party2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <h2 class="section-heading" onclick="goGalleryLink()">PARTY</h2>
       </div>
     </div>
   </div>
@@ -33,6 +38,11 @@ Sections animate in and out on scroll. Scroll up or down and the sections will w
   <div class="outer">
     <div class="inner">
       <div class="bg">
+        <div class="video-wrap">
+          <video autoplay="" loop="" muted="" class="custom-video" poster="">
+              <source src="themes-video/video/concert.mp4" type="video/mp4">
+          </video>
+        </div>
         <h2 class="section-heading">CONCERT</h2>
       </div>
     </div>
@@ -42,6 +52,11 @@ Sections animate in and out on scroll. Scroll up or down and the sections will w
   <div class="outer">
     <div class="inner">
       <div class="bg">
+        <div class="video-wrap">
+          <video autoplay="" loop="" muted="" class="custom-video" poster="">
+              <source src="themes-video/video/festival3.mp4" type="video/mp4">
+          </video>
+        </div>
         <h2 class="section-heading">FESTIVAL</h2>
       </div>
     </div>
@@ -51,6 +66,11 @@ Sections animate in and out on scroll. Scroll up or down and the sections will w
   <div class="outer">
     <div class="inner">
       <div class="bg">
+        <div class="video-wrap">
+          <video autoplay="" loop="" muted="" class="custom-video" poster="">
+              <source src="themes-video/video/workshop2.mp4" type="video/mp4">
+          </video>
+        </div>
         <h2 class="section-heading">WORKSHOP</h2>
       </div>
     </div>
