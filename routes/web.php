@@ -25,10 +25,6 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/video', function () {
-    return view('/video-page/video');
-});
-
 Route::get('/gallery', function () {
     return view('/gallery/gallery');
 });

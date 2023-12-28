@@ -49,6 +49,9 @@ $event = get_event();
 
   <link rel="stylesheet" href="assets-gallery/css/style.css">
 
+  <!-- Favicons -->
+  <link href="assets-home/img/fourfold1-logo.png" rel="icon">
+
 </head>
 <body>
 
