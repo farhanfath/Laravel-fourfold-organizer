@@ -63,8 +63,8 @@ class SectionResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make()->after(
-                    function (Collection $record){
-                        foreach ($record as $key){
+                    function (Collection $records){
+                        foreach ($records as $key){
                             if ($key->thumbnail) {
                                 Storage::disk('public')->delete($key->thumbnail);
                             }

@@ -131,3 +131,7 @@ h2 * {
 .section-heading{
   cursor: pointer;
 }
+
+.section-heading a {
+  color: black;
+}

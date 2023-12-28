@@ -16,8 +16,8 @@ Sections animate in and out on scroll. Scroll up or down and the sections will w
 -->
 
 <header>
-  <div class="nav">Fourfold Gallery</div>
-  <div class="nav"><a href="../"> Fourfold Organizer </a></div>
+  <div class="nav"><a href="/gallery">Fourfold Gallery</a></div>
+  <div class="nav"><a href="/"> Fourfold Organizer </a></div>
 </header>
 <section class="first">
   <div class="outer">
@@ -28,7 +28,7 @@ Sections animate in and out on scroll. Scroll up or down and the sections will w
               <source src="themes-video/video/party2.mp4" type="video/mp4">
           </video>
         </div>
-        <h2 class="section-heading" onclick="goGalleryLink()">PARTY</h2>
+        <h2 class="section-heading"><a class="section-heading" href="/party">PARTY</a></h2>
       </div>
     </div>
   </div>
@@ -43,7 +43,7 @@ Sections animate in and out on scroll. Scroll up or down and the sections will w
               <source src="themes-video/video/concert.mp4" type="video/mp4">
           </video>
         </div>
-        <h2 class="section-heading">CONCERT</h2>
+        <h2 class="section-heading"><a class="section-heading" href="/concert">CONCERT</a></h2>
       </div>
     </div>
   </div>
@@ -57,7 +57,7 @@ Sections animate in and out on scroll. Scroll up or down and the sections will w
               <source src="themes-video/video/festival3.mp4" type="video/mp4">
           </video>
         </div>
-        <h2 class="section-heading">FESTIVAL</h2>
+        <h2 class="section-heading"><a class="section-heading" href="/festival">FESTIVAL</a></h2>
       </div>
     </div>
   </div>
@@ -71,7 +71,7 @@ Sections animate in and out on scroll. Scroll up or down and the sections will w
               <source src="themes-video/video/workshop2.mp4" type="video/mp4">
           </video>
         </div>
-        <h2 class="section-heading">WORKSHOP</h2>
+        <h2 class="section-heading"><a class="section-heading" href="/workshop">WORKSHOP</a></h2>
       </div>
     </div>
   </div>

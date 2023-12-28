@@ -1,322 +1,257 @@
 @php
 
-$site_name = get_setting_value('_site_name');
-$jumbotron = get_section_data('JUMBOTRON');
-$about = get_section_data('ABOUT');
+    $site_name = get_setting_value('_site_name');
+    $jumbotron = get_section_data('JUMBOTRON');
+    $about = get_section_data('ABOUT');
 
-// setting
-$location = get_setting_value('_location');
-$site_description = get_setting_value('_site_description');
+    // setting
+    $location = get_setting_value('_location');
+    $site_description = get_setting_value('_site_description');
 
+    $post_as = get_partner_data('post_as');
+    $post_as = get_event_data('post_as');
 
-$post_as = get_partner_data('post_as');
-$post_as = get_event_data('post_as');
-
-// setting list link
-$youtube = get_setting_value('_youtube');
-$facebook = get_setting_value('_facebook');
-$instagram = get_setting_value('_instagram');
-$twitter = get_setting_value('_twitter');
-$partner = get_partner();
-$event = get_event();
+    // setting list link
+    $youtube = get_setting_value('_youtube');
+    $facebook = get_setting_value('_facebook');
+    $instagram = get_setting_value('_instagram');
+    $twitter = get_setting_value('_twitter');
+    $partner = get_partner();
+    $event = get_event();
 @endphp
 
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Event Details</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <title>Fourfold Event Details</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Favicons -->
-  <link href="assets-event/img/favicon.png" rel="icon">
-  <link href="assets-event/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- CSS
+    ================================================== -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-    rel="stylesheet">
+    <link rel="stylesheet" href="assets-event/css/base.css">
+    <link rel="stylesheet" href="assets-event/css/vendor.css">
+    <link rel="stylesheet" href="assets-event/css/main.css">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets-event/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets-event/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets-event/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="assets-event/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets-event/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets-event/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- script
+    ================================================== -->
+    <script src="assets-event/js/modernizr.js"></script>
+    <script src="assets-event/js/pace.min.js"></script>
 
-  <!-- Template Main CSS File -->
-  <link href="assets-event/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: UpConstruction - v1.3.0
-  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <!-- favicons
+    ================================================== -->
+    <link href="assets-home/img/fourfold1-logo.png" rel="icon">
 </head>
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex align-items-center">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+    <!-- home
+    ================================================== -->
+    <main class="s-home s-home--slides">
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets-event/img/logo.png" alt=""> -->
-        <h1>UpConstruction<span>.</span></h1>
-      </a>
-
-      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i
-                class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
-                    class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
-  <main id="main">
-
-    <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets-event/img/breadcrumbs-bg.jpg');">
-      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
-
-        <h2>Project Details</h2>
-        <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Project Details</li>
-        </ol>
-
-      </div>
-    </div><!-- End Breadcrumbs -->
-
-    <!-- ======= Projet Details Section ======= -->
-    <section id="project-details" class="project-details">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="position-relative h-100">
-          <div class="slides-1 portfolio-details-slider swiper">
-            <div class="swiper-wrapper align-items-center">
-              @foreach ($event as $item)
-              <div class="swiper-slide">
-                <img src="{{ Storage::url($item->thumbnail) }}" alt="">
-              </div>
-              @endforeach
+        <div class="home-slider">
+            <div class="home-slider-img">
+                <video autoplay muted loop playsinline>
+                    <source src="assets-event/video/concert.mp4" type="video/mp4">
+                </video>
             </div>
-            <div class="swiper-pagination"></div>
-          </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-
+            <div class="home-slider-img">
+                <video autoplay muted loop playsinline>
+                    <source src="assets-event/video/weddingvid.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="home-slider-img" style="background-image: url(assets-event/images/slides/slide-02.jpg);"></div>
+            <div class="home-slider-img" style="background-image: url(assets-event/images/slides/slide-03.jpg);"></div>
         </div>
 
-        <div class="row justify-content-between gy-4 mt-4">
+        <div class="overlay"></div>
 
-          <div class="col-lg-8">
-            <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia.
-                Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia
-                accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt
-                eius.
-              </p>
-              <p>
-                Amet consequatur qui dolore veniam voluptatem voluptatem sit. Non aspernatur atque natus ut cum nam et.
-                Praesentium error dolores rerum minus sequi quia veritatis eum. Eos et doloribus doloremque nesciunt
-                molestiae laboriosam.
-              </p>
+        <div class="home-content">
 
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis
-                  quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <div>
-                  <img src="assets-event/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
+            <div class="home-logo">
+                <a href="/">
+                    <h2>FOURFOLD.</h2>
+                </a>
+            </div>
+
+            <div class="row home-content__main">
+
+                <div class="col-eight home-content__text pull-right">
+                    <h3>Welcome to Count</h3>
+
+                    <h1>
+                        We are currently working <br>
+                        on a new super awesome <br> website.
+                    </h1>
+
+                    <p>
+                        Nulla porttitor accumsan tincidunt. Nulla quis lorem ut libero malesuada feugiat.
+                        Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.
+                        Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat.
+                    </p>
+
+                    <div class="home-content__subscribe">
+                        <form id="mc-form" class="group" novalidate="true">
+                            <input type="email" value="" name="EMAIL" class="email" id="mc-email"
+                                placeholder="Email Address" required="">
+                            <input type="submit" name="subscribe" value="Notify Me">
+                            <label for="mc-email" class="subscribe-message"></label>
+                        </form>
+                    </div>
+                </div> <!-- end home-content__text -->
+            </div> <!-- end home-content__main -->
+
+            <ul class="home-social">
+                <li>
+                    <a href="#0"><i class="fab fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fab fa-twitter" aria-hidden="true"></i><span>Twiiter</span></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fab fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fab fa-behance" aria-hidden="true"></i><span>Behance</span></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fab fa-dribbble" aria-hidden="true"></i><span>Dribbble</span></a>
+                </li>
+            </ul> <!-- end home-social -->
+
+            <div class="row home-copyright">
+                <span>Copyright 2023</span>
+                <span><a href="#"> fourfold Organizer</a></span>
+            </div> <!-- end home-copyright -->
+
+
+            <div class="home-content__line"></div>
+
+        </div> <!-- end home-content -->
+
+    </main> <!-- end s-home -->
+
+
+    <!-- info
+    ================================================== -->
+    <a class="info-toggle" href="#0">
+        <span class="info-menu-icon"></span>
+    </a>
+
+    <div class="s-info">
+        <div class="row info-wrapper">
+
+            <h1 class="section">Price List</h1>
+            <div class="main__cards cards">
+                <div class="cards__inner">
+                    <div class="cards__card card">
+                        <h2 class="card__heading">Basic</h2>
+                        <p class="card__price">$9.99</p>
+                        <ul role="list" class="card__bullets flow">
+                            <li>Access to standard workouts and nutrition plans</li>
+                            <li>Email support</li>
+                        </ul>
+                        <a href="#basic" class="card__cta cta">Get Started</a>
+                    </div>
+
+                    <div class="cards__card card">
+                        <h2 class="card__heading">Pro</h2>
+                        <p class="card__price">$19.99</p>
+                        <ul role="list" class="card__bullets flow">
+                            <li>Access to advanced workouts and nutrition plans</li>
+                            <li>Priority Email support</li>
+                            <li>Exclusive access to live Q&A sessions</li>
+                        </ul>
+                        <a href="#pro" class="card__cta cta">Upgrade to Pro</a>
+                    </div>
+
+                    <div class="cards__card card">
+                        <h2 class="card__heading">Ultimate</h2>
+                        <p class="card__price">$29.99</p>
+                        <ul role="list" class="card__bullets flow">
+                            <li>Access to all premium workouts and nutrition plans</li>
+                            <li>24/7 Priority support</li>
+                            <li>1-on-1 virtual coaching session every month</li>
+                            <li>Exclusive content and early access to new features</li>
+                        </ul>
+                        <a href="#ultimate" class="card__cta cta">Go Ultimate</a>
+                    </div>
                 </div>
-              </div>
+                <div class="overlay__price cards__inner"></div>
+            </div> <!-- end price list  -->
 
-              <p>
-                Impedit ipsum quae et aliquid doloribus et voluptatem quasi. Perspiciatis occaecati earum et magnam
-                animi. Quibusdam non qui ea vitae suscipit vitae sunt. Repudiandae incidunt cumque minus deserunt
-                assumenda tempore. Delectus voluptas necessitatibus est.
+            <div class="container" data-aos="fade-up" id="booking">
+                <div class="section-title">
+                    <h2>Reservation</h2>
+                    <p>Book a Package</p>
+                </div>
 
-              <p>
-                Sunt voluptatum sapiente facilis quo odio aut ipsum repellat debitis. Molestiae et autem libero.
-                Explicabo et quod necessitatibus similique quis dolor eum. Numquam eaque praesentium rem et qui
-                nesciunt.
-              </p>
+                <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+                  <div class="row">
+                    <div class="col-lg-4 col-md-6 form-group">
+                      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                      <div class="validate"></div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 form-group mt-0 mt-md-0">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+                      <div class="validate"></div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 form-group mt-0 mt-md-0">
+                      <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                      <div class="validate"></div>
+                    </div>
+                  </div>
+                  <div class="form-group mt-0">
+                    <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+                    <div class="validate"></div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
+                  </div>
+                  <div class="text-center"><button type="submit">Book a Table</button></div>
+                </form>
+
+
+
 
             </div>
-          </div>
 
-          <div class="col-lg-3">
-            <div class="portfolio-info">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Category</strong> <span>Web design</span></li>
-                <li><strong>Client</strong> <span>ASU Company</span></li>
-                <li><strong>Project date</strong> <span>01 March, 2020</span></li>
-                <li><strong>Project URL</strong> <a href="#">www.example.com</a></li>
-                <li><a href="#" class="btn-visit align-self-start">Visit Website</a></li>
-              </ul>
+        </div> <!-- end info wrapper -->
+    </div> <!-- end s-info -->
+
+    <script src="assets-event/js/price.js"></script>
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+            <div class="line-scale-pulse-out">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
-          </div>
-
         </div>
-
-      </div>
-    </section><!-- End Projet Details Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-
-    <div class="footer-content position-relative">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6">
-            <div class="footer-info">
-              <h3>UpConstruction</h3>
-              <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
-              </p>
-              <div class="social-links d-flex mt-3">
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div><!-- End footer info column-->
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Terms of service</a></li>
-              <li><a href="#">Privacy policy</a></li>
-            </ul>
-          </div><!-- End footer links column-->
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Web Development</a></li>
-              <li><a href="#">Product Management</a></li>
-              <li><a href="#">Marketing</a></li>
-              <li><a href="#">Graphic Design</a></li>
-            </ul>
-          </div><!-- End footer links column-->
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Hic solutasetp</h4>
-            <ul>
-              <li><a href="#">Molestiae accusamus iure</a></li>
-              <li><a href="#">Excepturi dignissimos</a></li>
-              <li><a href="#">Suscipit distinctio</a></li>
-              <li><a href="#">Dilecta</a></li>
-              <li><a href="#">Sit quas consectetur</a></li>
-            </ul>
-          </div><!-- End footer links column-->
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Nobis illum</h4>
-            <ul>
-              <li><a href="#">Ipsam</a></li>
-              <li><a href="#">Laudantium dolorum</a></li>
-              <li><a href="#">Dinera</a></li>
-              <li><a href="#">Trodelas</a></li>
-              <li><a href="#">Flexo</a></li>
-            </ul>
-          </div><!-- End footer links column-->
-
-        </div>
-      </div>
     </div>
 
-    <div class="footer-legal text-center position-relative">
-      <div class="container">
-        <div class="copyright">
-          &copy; Copyright <strong><span>UpConstruction</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a
-            href="https://themewagon.com">ThemeWagon</a>
-        </div>
-      </div>
-    </div>
-
-  </footer>
-  <!-- End Footer -->
-
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
-
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets-event/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets-event/vendor/aos/aos.js"></script>
-  <script src="assets-event/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets-event/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets-event/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets-event/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets-event/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets-event/js/main.js"></script>
+    <!-- Java Script
+    ================================================== -->
+    <script src="assets-event/js/jquery-3.2.1.min.js"></script>
+    <script src="assets-event/js/plugins.js"></script>
+    <script src="assets-event/js/main.js"></script>
 
 </body>
 
