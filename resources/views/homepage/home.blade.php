@@ -89,9 +89,13 @@ $event = get_event();
                   <li><a href="/workshop">Workshop</a></li>
                 </ul>
               </li>
-              <li><a href="/details">Services</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="/details-party">Party</a></li>
+                  <li><a href="/details-concert">Concert</a></li>
+                  <li><a href="/details-workshop">Workshop</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
         </ul>
@@ -209,7 +213,7 @@ $event = get_event();
           {{-- Filter --}}
           <ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-festival">Festival</li>
+            {{-- <li data-filter=".filter-festival">Festival</li> --}}
             <li data-filter=".filter-party">Party</li>
             <li data-filter=".filter-concert">Concert</li>
             <li data-filter=".filter-workshop">Workshop</li>
@@ -221,7 +225,7 @@ $event = get_event();
               <div class="portfolio-content h-100">
                 <img src="{{ Storage::url($item->thumbnail) }}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>{{ $item ->title }}</h4>
+                  <h4 style="color: black; font-weight: bold;">{{ $item ->title }}</h4>
                   <p>{!! $item ->content !!}</p>
                   <a href="{{ Storage::url($item->thumbnail) }}" title="{{ $item ->title }}"
                     data-gallery="portfolio-gallery-{{ $item->post_as }}" class="glightbox preview-link"><i
@@ -255,7 +259,8 @@ $event = get_event();
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  Sensasi festival yang diadakan oleh FOURFOLD ini sungguh luar biasa! Dari dekor hingga line-up artis, semuanya disusun dengan sempurna. 
+                  Rasanya seperti berada di dunia lain selama beberapa jam!
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
                 <img src="assets-home/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
@@ -268,7 +273,9 @@ $event = get_event();
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  Party yang diorganisir oleh FOURFOLD ini bukan sekadar acara biasa. 
+                  Mereka benar-benar memahami bagaimana menciptakan atmosfer yang tak terlupakan. 
+                  Setiap momen di pesta ini adalah kebahagiaan yang tak terlukiskan.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
                 <img src="assets-home/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
@@ -281,7 +288,9 @@ $event = get_event();
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  Konser yang diatur oleh tim FOURFOLD ini berhasil menyatukan berbagai genre musik. 
+                  Mulai dari rock hingga pop, semuanya disajikan dengan keahlian tinggi. 
+                  Pengalaman mendengarkan musik tak pernah sehebat ini sebelumnya!
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
                 <img src="assets-home/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
@@ -294,7 +303,8 @@ $event = get_event();
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  Workshop yang diadakan sangat informatif dan menyenangkan! FOURFOLD ini tidak hanya memberikan pengetahuan,
+                  tetapi juga memastikan semua peserta merasa terlibat dan termotivasi. Sangat merekomendasikan!
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
                 <img src="assets-home/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
@@ -307,7 +317,9 @@ $event = get_event();
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  FOURFOLD ini benar-benar tahu bagaimana menciptakan festival yang ramah lingkungan.
+                  Dari penggunaan bahan daur ulang hingga program edukasi tentang keberlanjutan, 
+                  mereka memberikan contoh nyata tentang bagaimana mengadakan acara dengan tanggung jawab.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
                 <img src="assets-home/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
@@ -348,7 +360,7 @@ $event = get_event();
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
               <a href="assets-home/img/gallery/exhibition.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="assets-home/img/gallery/exhibition.jpg" alt="" class="img-fluid" srcset="/exhibition.jpg?width=461px 305px">
+                <img src="assets-home/img/gallery/exhibition.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
@@ -422,7 +434,7 @@ $event = get_event();
               <img src="{{ Storage::url($item->thumbnail) }}" class="photo-sizing img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>{{ $item ->title }}</h4>
+                  <h4><a class="white" href="{{ $item->link }}">{{ $item ->title }}</a></h4>
                   <span>{!! $item ->content !!}</span>
                 </div>
                 <div class="social">
@@ -560,7 +572,7 @@ $event = get_event();
               <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
           </div>
-
+          
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
@@ -590,11 +602,6 @@ $event = get_event();
         &copy; Copyright <strong><span>{{ $site_name }}</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/restaurantly-restaurant-template/ -->
-        {{-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> --}}
       </div>
     </div>
   </footer><!-- End Footer -->

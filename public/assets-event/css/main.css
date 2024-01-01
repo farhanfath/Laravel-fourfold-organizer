@@ -2019,147 +2019,148 @@ html.no-csstransitions .home-content__main {
  * # info - (_site-layout.scss) 
  *
  * ------------------------------------------------------------------- */
-.s-info {
-  z-index: 500;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #111111;
-  color: rgba(255, 255, 255, 0.3);
-  padding: 21rem 0 9rem;
-  overflow-y: auto;
-  overflow-x: hidden;
-  visibility: hidden;
-  -webkit-transition: visibility 0s 0.7s;
-  transition: visibility 0s 0.7s;
-}
+  .s-info {
+    z-index: 500;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    /* background-image: url(../../assets-home/img/events-bg.jpg); */
+    color: rgba(255, 255, 255, 0.3);
+    padding: 15rem 0 9rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    visibility: hidden;
+    -webkit-transition: visibility 0s 0.7s;
+    transition: visibility 0s 0.7s;
+  }
 
-.s-info a {
-  color: #FFFFFF;
-  display: inline-block;
-  border-bottom: 1px solid transparent;
-}
+  .s-info a {
+    color: #FFFFFF;
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+  }
 
-.s-info a:hover,
-.s-info a:focus {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
+  .s-info a:hover,
+  .s-info a:focus {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
 
-.s-info h1,
-.s-info h3 {
-  margin-top: 0;
-  color: #FFFFFF;
-}
+  .s-info h1,
+  .s-info h3 {
+    margin-top: 0;
+    color: #FFFFFF;
+  }
 
-.s-info h1 {
-  font-size: 6.4rem;
-  line-height: 1.219;
-  margin-bottom: 4.2rem;
-  position: relative;
-}
+  .s-info h1 {
+    font-size: 6.4rem;
+    line-height: 1.219;
+    margin-bottom: 4.2rem;
+    position: relative;
+  }
 
-.s-info h1::before {
-  display: block;
-  content: "";
-  width: 80px;
-  height: 1px;
-  background-color: rgba(236, 149, 0, 0.6);
-  position: absolute;
-  left: 3px;
-  top: -3.6rem;
-}
+  .s-info h1::before {
+    display: block;
+    content: "";
+    width: 80px;
+    height: 1px;
+    background-color: rgba(236, 149, 0, 0.6);
+    position: absolute;
+    left: 3px;
+    top: -3.6rem;
+  }
 
-.s-info h3 {
-  font-family: "metropolis-regular", sans-serif;
-  font-size: 1.4rem;
-  line-height: 1.286;
-  color: #cda45e;
-}
+  .s-info h3 {
+    font-family: "metropolis-regular", sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.286;
+    color: #cda45e;
+  }
 
-.info-wrapper {
-  min-height: 100%;
-  -webkit-overflow-scrolling: touch;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  -webkit-transition: transform 0.7s cubic-bezier(0.86, 0.01, 0.77, 0.78);
-  transition: transform 0.7s cubic-bezier(0.86, 0.01, 0.77, 0.78);
-}
+  .info-wrapper {
+    min-height: 100%;
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-transition: transform 0.7s cubic-bezier(0.86, 0.01, 0.77, 0.78);
+    transition: transform 0.7s cubic-bezier(0.86, 0.01, 0.77, 0.78);
+  }
 
-.info-contact {
-  padding-top: 3rem;
-  color: #FFFFFF;
-}
+  .info-contact {
+    padding-top: 3rem;
+    color: #FFFFFF;
+  }
 
-.info-block {
-  margin-bottom: 4.5rem;
-}
+  .info-block {
+    margin-bottom: 4.5rem;
+  }
 
-.info-social {
-  list-style: none;
-  font-size: 1.5rem;
-  margin: 0;
-  padding: 0;
-}
+  .info-social {
+    list-style: none;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
 
-.info-social:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+  .info-social:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 
-.info-social li {
-  padding: .6rem 1.2rem .6rem 0;
-  line-height: 3rem;
-  width: 50%;
-  float: left;
-}
+  .info-social li {
+    padding: .6rem 1.2rem .6rem 0;
+    line-height: 3rem;
+    width: 50%;
+    float: left;
+  }
 
-.info-social a {
-  color: #FFFFFF;
-  border: none !important;
-}
+  .info-social a {
+    color: #FFFFFF;
+    border: none !important;
+  }
 
-.info-social i {
-  font-size: 2.4rem;
-  width: 3.6rem;
-  float: left;
-  position: relative;
-  top: .3rem;
-}
+  .info-social i {
+    font-size: 2.4rem;
+    width: 3.6rem;
+    float: left;
+    position: relative;
+    top: .3rem;
+  }
 
-.info-social span {
-  display: inline-block;
-  border-bottom: 1px solid transparent;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
+  .info-social span {
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
 
-.info-social a:hover span,
-.info-social:focus span {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
+  .info-social a:hover span,
+  .info-social:focus span {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
 
-.info-is-visible .s-info {
-  visibility: visible;
-  -webkit-transition: visibility 0s 0s;
-  transition: visibility 0s 0s;
-}
+  .info-is-visible .s-info {
+    visibility: visible;
+    -webkit-transition: visibility 0s 0s;
+    transition: visibility 0s 0s;
+  }
 
-.info-is-visible .info-wrapper {
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
-  -webkit-transition: transform 0.5s cubic-bezier(0.82, 0.01, 0.77, 0.78);
-  transition: transform 0.5s cubic-bezier(0.82, 0.01, 0.77, 0.78);
-}
+  .info-is-visible .info-wrapper {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: transform 0.5s cubic-bezier(0.82, 0.01, 0.77, 0.78);
+    transition: transform 0.5s cubic-bezier(0.82, 0.01, 0.77, 0.78);
+  }
 
 
 /* ------------------------------------------------------------------- 
@@ -2522,7 +2523,7 @@ html.no-csstransitions .home-content__main {
 # Book An Event
 --------------------------------------------------------------*/
 .section-title {
-  padding-top: 100px;
+  padding-top: 60px;
   padding-bottom: 40px;
 }
 
@@ -2688,4 +2689,123 @@ html.no-csstransitions .home-content__main {
 .php-email-form button[type="submit"]:focus {
   background: #cda45e;
   outline: none;
+}
+
+/*--------------------------------------------------------------
+# Events
+--------------------------------------------------------------*/
+
+
+.events {
+  background: url(../../assets-home/img/events-bg.jpg) center center no-repeat;
+  background-size: cover;
+  position: relative; 
+}
+
+.events::before {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.events .section-title h2 {
+  color: #fff;
+}
+
+.events .container {
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  max-width: 120%;
+}
+
+@media (min-width: 1024px) {
+  .events {
+    background-attachment: fixed;
+  }
+}
+
+.events .event-item {
+  color: #fff;
+  align-items: center;  
+}
+
+.events .event-item img {
+  width: 100%;
+  max-width: 120%; 
+  height: auto;
+}
+
+.events .event-item .content {
+  padding: 20px;
+}
+
+.events .event-item h3 {
+  font-weight: 600;
+  font-size: 26px;
+  color: #cda45e;
+  font-family: "Playfair Display", serif;
+}
+
+.events .event-item .price {
+  font-size: 26px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.events .event-item .price span {
+  border-bottom: 2px solid #cda45e;
+}
+
+.events .event-item ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.events .event-item ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #cda45e;
+}
+
+.events .event-item li{
+  margin-bottom: 1rem;
+}
+
+.events .event-item p{
+  margin-bottom: 0;
+}
+
+
+.events .event-item p:last-child {
+  margin-bottom: 0;
+}
+
+.events .swiper-pagination {
+  margin-top: 30px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.events .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+}
+
+.events .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #cda45e;
+}
+
+* {
+  box-sizing: border-box;
 }

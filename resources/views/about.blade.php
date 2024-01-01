@@ -23,8 +23,8 @@ Sections animate in and out on scroll. Scroll up or down and the sections will w
 -->
 
     <header>
-        <div class="nav"><a href="/gallery">Fourfold Gallery</a></div>
-        <div class="nav"><a href="/"> Fourfold Organizer </a></div>
+        <div class="nav"><a href="/gallery">Gallery</a></div>
+        <div class="nav"><a href="/">Home</a></div>
     </header>
     <section class="first">
         <div class="outer">

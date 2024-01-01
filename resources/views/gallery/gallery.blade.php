@@ -71,7 +71,7 @@ $event = get_event();
       <div class="container-fluid">
         <div class="row align-items-center">
           <div class="col-6 col-xl-2" data-aos="fade-down">
-            <h1 class="mb-0"><a href="/" class="text-white h2 mb-0">FOURFOLD</a></h1>
+            <h1 class="mb-0"><a href="/" class="text-white h2 mb-0" style="font-family: 'Times New Roman', Times, serif;">FOURFOLD<span style="color: #feb900;">.</span></a></h1>
           </div>
         </div>
       </div>

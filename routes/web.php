@@ -29,8 +29,18 @@ Route::get('/gallery', function () {
     return view('/gallery/gallery');
 });
 
-Route::get('/details', function () {
-    return view('/event/details');
+// event - details
+
+Route::get('/details-concert', function () {
+    return view('/event/concert-details');
+});
+
+Route::get('/details-party', function () {
+    return view('/event/party-details');
+});
+
+Route::get('/details-workshop', function () {
+    return view('/event/workshop-details');
 });
 
 
