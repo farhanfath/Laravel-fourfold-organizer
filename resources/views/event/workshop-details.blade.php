@@ -64,18 +64,37 @@
     <main class="s-home s-home--slides">
 
         <div class="home-slider">
+
             <div class="home-slider-img">
                 <video autoplay muted loop playsinline>
-                    <source src="assets-event/video/concert.mp4" type="video/mp4">
+                    <source src="assets-event/video/seminar.mp4" type="video/mp4">
                 </video>
             </div>
+
             <div class="home-slider-img">
                 <video autoplay muted loop playsinline>
-                    <source src="assets-event/video/weddingvid.mp4" type="video/mp4">
+                    <source src="assets-event/video/workshop2.mp4" type="video/mp4">
                 </video>
             </div>
-            <div class="home-slider-img" style="background-image: url(assets-event/images/slides/slide-02.jpg);"></div>
-            <div class="home-slider-img" style="background-image: url(assets-event/images/slides/slide-03.jpg);"></div>
+
+            <div class="home-slider-img">
+                <video autoplay muted loop playsinline>
+                    <source src="assets-event/video/art3.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="home-slider-img">
+                <video autoplay muted loop playsinline>
+                    <source src="assets-event/video/art2.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="home-slider-img">
+                <video autoplay muted loop playsinline>
+                    <source src="assets-event/video/art1.mp4" type="video/mp4">
+                </video>
+            </div>
+
         </div>
 
         <div class="overlay"></div>
@@ -84,59 +103,54 @@
 
             <div class="home-logo">
                 <a href="/">
-                    <h2 style="font-family: 'Times New Roman', Times, serif;">FOURFOLD<span
-                            style="color: #feb900">.</span></h2>
+                    <h2 style="font-family: 'Times New Roman', Times, serif; text-transform: uppercase;">
+                        {{ $site_name }}<span style="color: #feb900">.</span></h2>
                 </a>
             </div>
 
             <div class="home-content__main">
 
                 <div class="col-eight home-content__text pull-right">
-                    <h3>Welcome to Count</h3>
+                    <h3>Welcome to Fourfold Organizer!</h3>
 
                     <h1>
-                        We are currently working <br>
-                        on a new super awesome <br> website.
+                        Let us organize your exhibition, workshop, and festival into memorable moments
                     </h1>
 
                     <p>
-                        Nulla porttitor accumsan tincidunt. Nulla quis lorem ut libero malesuada feugiat.
-                        Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.
-                        Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat.
+                        If you are looking for a professional and reliable event organizer for your art exhibition,
+                        workshop, or game festival, look no further than Fourfold Organizer.
+                        We can plan and execute any type of event.
+                        We have the most suitable venues, equipment, and staff to ensure a smooth and successful event.
+                        We will also take care of the tickets, security, and promotion, so you can relax and enjoy the
+                        art.
                     </p>
 
-                    {{-- <div class="home-content__subscribe">
-                        <form id="mc-form" class="group" novalidate="true">
-                            <input type="email" value="" name="EMAIL" class="email" id="mc-email"
-                                placeholder="Email Address" required="">
-                            <input type="submit" name="subscribe" value="Notify Me">
-                            <label for="mc-email" class="subscribe-message"></label>
-                        </form>
-                    </div> --}}
                 </div> <!-- end home-content__text -->
             </div> <!-- end home-content__main -->
 
             <ul class="home-social">
                 <li>
-                    <a href="#0"><i class="fab fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a>
+                    <a href="{{ $facebook }}"><i class="fab fa-facebook-f"
+                            aria-hidden="true"></i><span>Facebook</span></a>
                 </li>
                 <li>
-                    <a href="#0"><i class="fab fa-twitter" aria-hidden="true"></i><span>Twiiter</span></a>
+                    <a href="{{ $twitter }}"><i class="fab fa-twitter"
+                            aria-hidden="true"></i><span>Twiiter</span></a>
                 </li>
                 <li>
-                    <a href="#0"><i class="fab fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
+                    <a href="{{ $instagram }}"><i class="fab fa-instagram"
+                            aria-hidden="true"></i><span>Instagram</span></a>
                 </li>
                 <li>
-                    <a href="#0"><i class="fab fa-behance" aria-hidden="true"></i><span>Behance</span></a>
-                </li>
-                <li>
-                    <a href="#0"><i class="fab fa-dribbble" aria-hidden="true"></i><span>Dribbble</span></a>
+                    <a href="{{ $youtube }}"><i class="fab fa-youtube"
+                            aria-hidden="true"></i><span>Youtube</span></a>
                 </li>
             </ul> <!-- end home-social -->
 
             <div class="row home-copyright">
                 <span>Copyright 2023</span>
-                <span><a href="#"> fourfold Organizer</a></span>
+                <span><a href="#">{{ $site_name }} Organizer</a></span>
             </div> <!-- end home-copyright -->
 
 
@@ -161,98 +175,33 @@
 
                 <div class="section-title">
                     <h2>Events</h2>
-                    <p>Organize Your Events in our Restaurant</p>
+                    <p>Organize Your Events with Us</p>
                 </div>
 
                 <div class="events-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
                     <div class="swiper-wrapper">
 
-                        <div class="swiper-slide">
-                            <div class="event-item">
-                                <div class="col-lg-6">
-                                    <img src="assets-home/img/event-birthday.jpg" class="img-fluid" alt="">
-                                </div>
-                                <div class="col-lg-6 pt-4 pt-lg-0 content">
-                                    <h3>Birthday Parties</h3>
-                                    <div class="price">
-                                        <p><span>$189</span></p>
+                        @foreach ($event as $item)
+                            @if ($item->post_as === 'workshop')
+                                <div class="swiper-slide">
+                                    <div class="event-item">
+                                        <div class="col-lg-6">
+                                            <img src="{{ Storage::url($item->thumbnail) }}" class="img-fluid"
+                                                alt="">
+                                        </div>
+                                        <div class="col-lg-6 pt-4 pt-lg-0 content">
+                                            <h3>{{ $item->title }}</h3>
+                                            <div class="price">
+                                                <p><span>{{ $item->price }}</span></p>
+                                            </div>
+                                            <p class="fst-italic">
+                                                {!! $item->deskripsi !!}
+                                            </p>
+                                        </div>
                                     </div>
-                                    <p class="fst-italic">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore
-                                        magna aliqua.
-                                    </p>
-                                    <ul>
-                                        <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea
-                                            commodo consequat.</li>
-                                        <li><i class="bi bi-check-circled"></i> Duis aute irure dolor in reprehenderit
-                                            in voluptate velit.</li>
-                                        <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea
-                                            commodo consequat.</li>
-                                    </ul>
-                                    <p>
-                                    </p>
-                                </div>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="event-item">
-                                <div class="col-lg-6">
-                                    <img src="assets-home/img/event-private.jpg" class="img-fluid" alt="">
-                                </div>
-                                <div class="col-lg-6 pt-4 pt-lg-0 content">
-                                    <h3>Private Parties</h3>
-                                    <div class="price">
-                                        <p><span>$290</span></p>
-                                    </div>
-                                    <p class="fst-italic">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore
-                                        magna aliqua.
-                                    </p>
-                                    <ul>
-                                        <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea
-                                            commodo consequat.</li>
-                                        <li><i class="bi bi-check-circled"></i> Duis aute irure dolor in reprehenderit
-                                            in voluptate velit.</li>
-                                        <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea
-                                            commodo consequat.</li>
-                                    </ul>
-                                    <p>
-                                    </p>
-                                </div>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="event-item">
-                                <div class="col-lg-6">
-                                    <img src="assets-home/img/event-custom.jpg" class="img-fluid" alt="">
-                                </div>
-                                <div class="col-lg-6 pt-4 pt-lg-0 content">
-                                    <h3>Custom Parties</h3>
-                                    <div class="price">
-                                        <p><span>$99</span></p>
-                                    </div>
-                                    <p class="fst-italic">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore
-                                        magna aliqua.
-                                    </p>
-                                    <ul>
-                                        <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea
-                                            commodo consequat.</li>
-                                        <li><i class="bi bi-check-circled"></i> Duis aute irure dolor in reprehenderit
-                                            in voluptate velit.</li>
-                                        <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea
-                                            commodo consequat.</li>
-                                    </ul>
-                                    <p>
-                                    </p>
-                                </div>
-                            </div>
-                        </div><!-- End testimonial item -->
+                                </div><!-- End testimonial item -->
+                            @endif
+                        @endforeach
 
                     </div>
                     <div class="swiper-pagination"></div>
@@ -268,41 +217,34 @@
             <div class="container" data-aos="fade-up" id="booking">
                 <div class="section-title">
                     <h2>Reservation</h2>
-                    <p>Book a Package</p>
+                    <p>Make a Reservation</p>
                 </div>
 
-                <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form"
-                    data-aos="fade-up" data-aos-delay="100">
+                <form
+                    action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdJd5A6NB_Y-nayMcFcLqOFbo6GDk3mBmxTDLOvwiATKUCh3A/formResponse"
+                    id="myForm" method="post" role="form" class="php-email-form" data-aos="fade-up" target="_blank"
+                    data-aos-delay="100">
                     <div class="row">
+                        <div class="col-lg-4 col-md-6 form-group mt-0 mt-md-0">
+                            <input type="email" class="form-control" name="emailAddress" id="email"
+                                placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email"
+                                required>
+                        </div>
                         <div class="col-lg-4 col-md-6 form-group">
-                            <input type="text" name="name" class="form-control" id="name"
-                                placeholder="Your Name" data-rule="minlen:4"
-                                data-msg="Please enter at least 4 chars">
-                            <div class="validate"></div>
+                            <input type="text" name="entry.169393584" class="form-control" id="name"
+                                placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars"
+                                required>
                         </div>
                         <div class="col-lg-4 col-md-6 form-group mt-0 mt-md-0">
-                            <input type="email" class="form-control" name="email" id="email"
-                                placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
-                            <div class="validate"></div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 form-group mt-0 mt-md-0">
-                            <input type="text" class="form-control" name="phone" id="phone"
+                            <input type="text" class="form-control" name="entry.1007643834" id="phone"
                                 placeholder="Your Phone" data-rule="minlen:4"
-                                data-msg="Please enter at least 4 chars">
-                            <div class="validate"></div>
+                                data-msg="Please enter at least 4 chars" required>
                         </div>
                     </div>
                     <div class="form-group mt-0">
-                        <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
-                        <div class="validate"></div>
+                        <textarea class="form-control" name="entry.1994901952" rows="5" placeholder="Message" required></textarea>
                     </div>
-                    <div class="mb-3">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your booking request was sent. We will call back or send an Email to
-                            confirm your reservation. Thank you!</div>
-                    </div>
-                    <div class="text-center"><button type="submit">Book a Table</button></div>
+                    <div class="text-center"><button type="submit" onclick="deleteForm()">Book a Reservation</button></div>
                 </form>
             </div> <!-- end contact -->
 
@@ -334,17 +276,26 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var mySwiper = new Swiper('.events-slider', {
-                slidesPerView: 1, // Menampilkan satu testimonial pada satu waktu
-                spaceBetween: 10, // Jarak antara testimonial
-                loop: true, // Untuk pengalaman swipe yang tanpa batas
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-            });
+        new Swiper('.events-slider', {
+            speed: 600,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false
+            },
+            slidesPerView: 'auto',
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true
+            }
         });
+        
+        function deleteForm() {
+            setTimeout(function() {
+                document.getElementById("myForm").reset();
+            }, 1500);
+        }
     </script>
 
 

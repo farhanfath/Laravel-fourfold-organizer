@@ -38,11 +38,24 @@ class EventResource extends Resource
                     Forms\Components\TextInput::make('link')
                         ->required()
                         ->maxLength(255),
+                    Forms\Components\TextInput::make('price')
+                        ->required()
+                        ->maxLength(255),
+                    Forms\Components\RichEditor::make('deskripsi')
+                        ->required(),
                     Forms\Components\Select::make('post_as')->options([
+                            'wedding'=> 'wedding',
+                            'party'=> 'party',
+                            'concert'=> 'concert',
+                            'workshop'=> 'workshop',
+                    ]),
+                    Forms\Components\Select::make('category')->options([
                             'festival' => 'festival',
                             'party'=> 'party',
                             'concert'=> 'concert',
                             'workshop'=> 'workshop',
+                            'wedding'=> 'wedding',
+                            'night'=> 'night',
                     ])
                 ]),
             ]);

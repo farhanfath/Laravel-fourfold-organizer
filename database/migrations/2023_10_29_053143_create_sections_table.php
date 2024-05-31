@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('sections', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('subtitle');
             $table->string('thumbnail');
             $table->longText('content');
             $table->enum('post_as', ['JUMBOTRON', 'ABOUT'])->nullable();

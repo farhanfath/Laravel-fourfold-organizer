@@ -17,7 +17,10 @@ return new class extends Migration
             $table->string('thumbnail');
             $table->longText('content');
             $table->string('link');
-            $table->enum('post_as', ['festival','party','concert','workshop'])->nullable();
+            $table->string('price');
+            $table->longText('deskripsi');
+            $table->enum('post_as', ['wedding','party','concert','workshop'])->nullable();
+            $table->enum('category', ['festival','party','concert','workshop','wedding','night'])->nullable();
             $table->timestamps();
         });
     }

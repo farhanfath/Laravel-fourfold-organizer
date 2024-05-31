@@ -29,7 +29,7 @@ $event = get_event();
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  
 
   <link rel="stylesheet" href="assets-gallery/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets-gallery/css/magnific-popup.css">
@@ -41,7 +41,7 @@ $event = get_event();
 
   <link rel="stylesheet" href="assets-gallery/css/bootstrap-datepicker.css">
 
-  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  
 
   <link rel="stylesheet" href="assets-gallery/css/swiper.css">
 
@@ -70,7 +70,7 @@ $event = get_event();
       <div class="container-fluid">
         <div class="row align-items-center">
           <div class="col-6 col-xl-2" data-aos="fade-down">
-            <h1 class="mb-0"><a href="/gallery" class="text-white h2 mb-0">FOURFOLD</a></h1>
+            <h1 class="mb-0"><a href="/gallery" class="text-white h2 mb-0" style="font-family: 'Times New Roman', Times, serif; text-transform: uppercase;">{{ $site_name }}<span style="color: #feb900;">.</span></a></h1>
           </div>
         </div>
       </div> 
@@ -89,7 +89,7 @@ $event = get_event();
         </div>
         <div class="row" id="lightgallery">
           @foreach ($event as $item)
-            @if ($item->post_as === 'party')
+            @if ($item->category === 'wedding')
             <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="{{ Storage::url($item->thumbnail) }}" data-sub-html="<h4>{{ $item->title }}</h4><p>{{ $item->content }}</p>">
               <a href="#"><img src="{{ Storage::url($item->thumbnail) }}" alt="Image" class="img-fluid"></a>
             </div>
@@ -102,9 +102,6 @@ $event = get_event();
     <div class="footer py-4">
       <div class="container-fluid text-center">
         <p>
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Fourfold</a>
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
         </p>
       </div>
     </div>

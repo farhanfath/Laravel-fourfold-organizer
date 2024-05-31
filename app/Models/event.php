@@ -16,7 +16,10 @@ class event extends Model
         'thumbnail',
         'content',
         'link',
+        'price',
+        'deskripsi',
         'post_as',
+        'category',
     ];
 
     protected static function boot()

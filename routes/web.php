@@ -43,6 +43,10 @@ Route::get('/details-workshop', function () {
     return view('/event/workshop-details');
 });
 
+Route::get('/details-wedding', function () {
+    return view('/event/wedding-details');
+});
+
 
 // gallery - details
 

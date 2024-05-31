@@ -32,7 +32,7 @@ Sections animate in and out on scroll. Scroll up or down and the sections will w
                 <div class="bg one">
                     <div class="video-wrap">
                         <video autoplay="" loop="" muted="" class="custom-video" poster="">
-                            <source src="themes-video/video/party2.mp4" type="video/mp4">
+                            <source src="assets-event/video/promnight.mp4" type="video/mp4">
                         </video>
                     </div>
                     <h2 class="section-heading"><a class="section-heading" href="/party">PARTY</a></h2>

@@ -11,6 +11,7 @@ class section extends Model
     use HasFactory;
     protected $fillable = [
         'title',
+        'subtitle',
         'thumbnail',
         'content',
         'post_as',

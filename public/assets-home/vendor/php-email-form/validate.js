@@ -1,85 +1,65 @@
-/**
-* PHP Email Form Validation - v3.0
-* URL: https://bootstrapmade.com/php-email-form/
-* Author: BootstrapMade.com
-*/
-(function () {
-  "use strict";
+var btn = document.getElementById('btnEmail');
+var namaPengirim = document.getElementById('namaPengirim');
+var linkemail = document.getElementById('linkemail');
+var subject = document.getElementById('subject');
+var message = document.getElementById('message');
 
-  let forms = document.querySelectorAll('.php-email-form');
+btn.addEventListener('click', function(e){
+  e.preventDefault();
 
-  forms.forEach( function(e) {
-    e.addEventListener('submit', function(event) {
-      event.preventDefault();
+  if (isFormValid()) {
+    sendEmail();
+  } else {  
+    failedSent();
+  }
+})
 
-      let thisForm = this;
-
-      let action = thisForm.getAttribute('action');
-      let recaptcha = thisForm.getAttribute('data-recaptcha-site-key');
-      
-      if( ! action ) {
-        displayError(thisForm, 'The form action property is not set!')
-        return;
-      }
-      thisForm.querySelector('.loading').classList.add('d-block');
-      thisForm.querySelector('.error-message').classList.remove('d-block');
-      thisForm.querySelector('.sent-message').classList.remove('d-block');
-
-      let formData = new FormData( thisForm );
-
-      if ( recaptcha ) {
-        if(typeof grecaptcha !== "undefined" ) {
-          grecaptcha.ready(function() {
-            try {
-              grecaptcha.execute(recaptcha, {action: 'php_email_form_submit'})
-              .then(token => {
-                formData.set('recaptcha-response', token);
-                php_email_form_submit(thisForm, action, formData);
-              })
-            } catch(error) {
-              displayError(thisForm, error)
-            }
-          });
-        } else {
-          displayError(thisForm, 'The reCaptcha javascript API url is not loaded!')
-        }
-      } else {
-        php_email_form_submit(thisForm, action, formData);
-      }
+function sendEmail() {
+  const bodyMessage = `Nama : ${namaPengirim.value} <br> Email : ${linkemail.value} <br> message : ${message.value}`;
+    Email.send({
+      Host: "smtp.elasticemail.com",
+      Username: "hanforlife3@gmail.com",
+      Password: "438610C340BCCBF375B3B388FE7BC7B7C32F",
+      To: 'hanforlife3@gmail.com',
+      From: "hanforlife3@gmail.com",
+      Subject: subject.value,
+      Body: bodyMessage
+    }).then(function () {
+      // SweetAlert berhasil
+      Swal.fire({
+        html: "<h5 style='color:#cda45e; font-family: serif'>Thanks For Your Feedback</h5>",
+        icon: "success",
+        background: "#1a1814",
+        confirmButtonColor: "#cda45e"
+      }).then(function () {
+        // Clearform
+        clearForm();
+      });
     });
+  }
+
+function clearForm() {
+  document.getElementById("myForm").reset();
+}
+
+function isFormValid() {
+  const isinama = document.getElementById('namaPengirim').value;
+  const isiemail = document.getElementById('linkemail').value;
+  const subject = document.getElementById('subject').value;
+  const message = document.getElementById('message').value;
+  
+  if (isinama === '' || isiemail === '' || subject === '' || message === '') {
+    return false;
+  }
+  return true;
+}
+
+function failedSent() {
+  Swal.fire({
+    icon: "error",
+    html: "<h5 style='color:#cda45e; font-family: serif'>Harap Isi Semua Kolom</h5>",
+    background: "#1a1814",
+    showConfirmButton: false,
+    timer: 1000
   });
-
-  function php_email_form_submit(thisForm, action, formData) {
-    fetch(action, {
-      method: 'POST',
-      body: formData,
-      headers: {'X-Requested-With': 'XMLHttpRequest'}
-    })
-    .then(response => {
-      if( response.ok ) {
-        return response.text()
-      } else {
-        throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
-      }
-    })
-    .then(data => {
-      thisForm.querySelector('.loading').classList.remove('d-block');
-      if (data.trim() == 'OK') {
-        thisForm.querySelector('.sent-message').classList.add('d-block');
-        thisForm.reset(); 
-      } else {
-        throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
-      }
-    })
-    .catch((error) => {
-      displayError(thisForm, error);
-    });
-  }
-
-  function displayError(thisForm, error) {
-    thisForm.querySelector('.loading').classList.remove('d-block');
-    thisForm.querySelector('.error-message').innerHTML = error;
-    thisForm.querySelector('.error-message').classList.add('d-block');
-  }
-
-})();
+}

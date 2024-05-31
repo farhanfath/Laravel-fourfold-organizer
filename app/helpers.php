@@ -46,6 +46,10 @@ function get_event()
     $data = event::all();
     return $data;
 }
-
+function get_section()
+{
+    $data = section::all();
+    return $data;
+}
 
 

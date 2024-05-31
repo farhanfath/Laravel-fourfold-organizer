@@ -30,9 +30,12 @@ class SectionResource extends Resource
                     Forms\Components\TextInput::make('title')
                         ->required()
                         ->maxLength(255),
+                    Forms\Components\TextInput::make('subtitle')
+                        ->required()
+                        ->maxLength(255),
                     Forms\Components\FileUpload::make('thumbnail')
                         ->required()->image()->disk('public'),
-                    Forms\Components\RichEditor::make('content')
+                    Forms\Components\Textarea::make('content')
                         ->required(),
                     Forms\Components\Select::make('post_as')->options([
                             'JUMBOTRON' => 'JUMBOTRON',
